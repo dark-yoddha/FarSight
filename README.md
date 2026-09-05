@@ -5,30 +5,30 @@
 
 FarSight is a high-performance Paper plugin designed to let players see massive distances without melting your server's CPU. By combining client-side "Ghost Chunks", intelligent dynamic bandwidth throttling, and a blistering-fast background pre-generator, FarSight delivers an incredible visual experience with zero compromises.
 
-## ? Features
+## ✨ Features
 
-### ?? Ghost Chunks (Client-Side Caching)
+### 🔭 Ghost Chunks (Client-Side Caching)
 Let your players see mountains 64+ chunks away! FarSight intercepts network packets and forces the client to keep distant chunks rendered on their screen, even after the server has unloaded them from memory. 
 - **Zero Server Lag:** Ghost chunks do not tick on the server. No server-side entity lag, no mob spawning, zero TPS impact.
 - **Advanced Block Syncing:** FarSight automatically synchronizes block updates in ghost chunks (such as TNT explosions, piston movements, and natural crop growth) so the distant landscape always looks accurate.
 - **Circular Ripple Loading:** Chunks load smoothly in a beautiful, fast circular pattern around the player.
 
-### ?? Smart Entity Chunk Bridges
+### 🔭 Smart Entity Chunk Bridges
 Ever tried to shoot an arrow at a friend 150 blocks away, only for them to disappear because of vanilla Minecraft's 64-block entity tracking limit?
 FarSight creates a temporary "bridge" of chunks between distant players and forcefully bypasses the vanilla entity tracker. You can see players, projectiles, dropped items, and mobs updating in perfect real-time from hundreds of blocks away.
 
-### ?? Unleashed Auto-Generator
+### 🚀 Unleashed Auto-Generator
 Pre-generate your world at blistering speeds. FarSight includes a built-in pre-generator that only runs when the server is empty.
 - **Hardware-Scaled Speeds:** It dynamically scales to your CPU and Disk I/O, effortlessly hitting **100+ Chunks Per Second** on strong hardware without freezing the main thread.
 - **Pause & Resume:** Tracks progress cleanly in a `pregen_progress.yml` file. It automatically pauses when a player logs in and immediately resumes when the server is empty again.
 
-### ?? Dynamic Ping Bandwidth Throttling
+### 📶 Dynamic Ping Bandwidth Throttling
 Unlike other plugins that blindly spam chunks and crash players on slow Wi-Fi or mobile hotspots, FarSight dynamically reads the player's connection latency in real-time.
 If a player's ping spikes, FarSight instantly throttles (or completely pauses) background chunk sending until their connection stabilizes. **Zero keepalive timeouts.**
 
 ---
 
-## ?? Commands & Permissions
+## 💻 Commands & Permissions
 *Permission for all commands: `farsight.admin` or OP.*
 
 - `/farsight radius <blocks>` - Set the radius to pre-generate (e.g. `2500` for a 5000x5000 world border).
@@ -40,7 +40,7 @@ If a player's ping spikes, FarSight instantly throttles (or completely pauses) b
 
 ---
 
-## ??? Configuration
+## ⚙️ Configuration
 Easily tweak the plugin in `config.yml`:
 
 ```yaml
@@ -56,7 +56,7 @@ ghost-chunks:
 
 ---
 
-## ?? Installation
+## 📥 Installation
 
 1. Download the latest `FarSight-Paper-1.0.jar` from Modrinth.
 2. Place the file inside your Paper server's `plugins/` folder.
@@ -67,7 +67,7 @@ ghost-chunks:
 
 ---
 
-## ?? Compiling from Source
+## 🛠️ Compiling from Source
 
 This project uses Gradle. To build the Paper module:
 ```bash
@@ -75,4 +75,4 @@ cd paper-1.21.11
 ./gradlew build
 ```
 The compiled jar for Paper servers will be located at `paper-1.21.11/build/libs/FarSight-1.0-dev.jar`.
-
+I have renamed it to FarSight-1.0.jar in release to make it look better.
