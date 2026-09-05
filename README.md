@@ -1,6 +1,6 @@
 <div align="center">
   <h1>FarSight</h1>
-  <p><b>See further, lag less. The ultimate view distance and pre-generation solution for modern Paper servers.</b></p>
+  <p><b>No limits to sight, lag less. The ultimate view distance and pre-generation solution for modern Paper servers.</b></p>
 </div>
 
 FarSight is a high-performance Paper plugin designed to let players see massive distances without melting your server's CPU. By combining client-side "Ghost Chunks", intelligent dynamic bandwidth throttling, and a blistering-fast background pre-generator, FarSight delivers an incredible visual experience with zero compromises.
