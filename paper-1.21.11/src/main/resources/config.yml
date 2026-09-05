@@ -1,0 +1,50 @@
+# FarSight Configuration
+# The radius (in chunks) a player can move before the chunk line is recalculated.
+# This prevents rapid loading and unloading of chunks when a player moves slightly.
+update-cache-radius: 2
+
+# How long (in seconds) to keep chunks loaded after players move away or leave.
+# This prevents chunks from instantly unloading if a player disconnects briefly or steps out of range.
+# Default: 120 (2 minutes)
+chunk-unload-delay-seconds: 120
+
+# The custom view distance applied to players when they join. (Used if dynamic is disabled)
+# Note: Ensure the server version is 1.14+ to support setting this dynamically.
+custom-view-distance: 16
+
+# The interval (in ticks) for checking player distances and loading/unloading chunks.
+# 20 ticks = 1 second.
+task-interval-ticks: 20
+
+dynamic-view-distance:
+  # If true, the plugin will dynamically adjust player view distance based on player count and distance between players.
+  # The plugin will strictly cap the total loaded chunks by decreasing view distance when players move further apart,
+  # offsetting the cost of generating chunk bridges between them.
+  enabled: true
+  
+  # The absolute minimum view distance players will be set to (vanilla minimum is usually 2 or 4).
+  # When players move so far apart that the view distance hits this minimum, chunk bridges will stop extending to save server performance.
+  min-view-distance: 4
+  
+  # The maximum view distance players will be set to.
+  # This is the view distance players will have when they are close together and no extra chunk bridges are needed.
+  max-view-distance: 16
+
+auto-generate:
+  # If true, pre-generates chunks around the spawn in the background when no players are online.
+  enabled: true
+  
+  # Radius in chunks to pre-generate around 0,0.
+  radius: 64
+
+ghost-chunks:
+  # This acts as a hard cap on how many ghost chunks a client can receive.
+  # The plugin will dynamically match the player's client-side render distance setting,
+  # but it will never exceed this maximum limit.
+  # A safe default is 64.
+  max-ghost-chunk-radius: 64
+  
+  # The absolute maximum chunks per tick the server will send to a player with an excellent ping (<100ms).
+  # The plugin will dynamically lower this rate if the player's ping rises, preventing network clogs.
+  # Higher values load distant chunks faster but increase server/client bandwidth usage.
+  max-send-rate-per-tick: 40

@@ -1,0 +1,9 @@
+name: FarSight
+version: '${version}'
+
+main: com.darkyoddha.farSight.FarSight
+api-version: '1.21'
+load: STARTUP
+
+authors: [ Dark_Yoddha ]
+depend: [ProtocolLib]

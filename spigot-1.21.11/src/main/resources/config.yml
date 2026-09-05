@@ -1,0 +1,38 @@
+# FarSight Configuration
+
+# The hard cap on the number of chunks that can be loaded between a pair of players.
+# E.g., if set to 50, players further than 800 blocks apart will not load intermediate chunks.
+max-chunks-per-pair: 50
+
+# The radius (in chunks) a player can move before the chunk line is recalculated.
+# This prevents rapid loading and unloading of chunks when a player moves slightly.
+update-cache-radius: 2
+
+# How long (in seconds) to keep chunks loaded after players move away or leave.
+# This prevents chunks from instantly unloading if a player disconnects briefly or steps out of range.
+# Default: 120 (2 minutes)
+chunk-unload-delay-seconds: 120
+
+# The custom view distance applied to players when they join. (Used if dynamic is disabled)
+# Note: Ensure the server version is 1.14+ to support setting this dynamically.
+custom-view-distance: 16
+
+# The interval (in ticks) for checking player distances and loading/unloading chunks.
+# 20 ticks = 1 second.
+task-interval-ticks: 40
+
+dynamic-view-distance:
+  # If true, the plugin will dynamically adjust player view distance based on player count
+  enabled: true
+  
+  # The target total number of chunks the server should aim to keep loaded.
+  # A good baseline for 10 players at 10 view distance is ~4500 chunks.
+  # If you have 20 players, it will lower view distance to ~7 to maintain performance.
+  # Adjust this based on your server's RAM and CPU specs.
+  target-total-chunks: 4500
+  
+  # The absolute minimum view distance players will be set to (vanilla minimum is usually 2 or 4).
+  min-view-distance: 4
+  
+  # The maximum view distance players will be set to.
+  max-view-distance: 16

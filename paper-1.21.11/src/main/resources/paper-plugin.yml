@@ -1,0 +1,8 @@
+name: FarSight
+version: 1.0.0
+
+main: com.darkyoddha.farSight.FarSight
+api-version: '1.21'
+load: STARTUP
+
+authors: [ Dark_Yoddha ]
